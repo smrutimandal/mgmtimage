@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: mgmt
+  name: mgmt-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mgmt
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: mgmt
+    spec:
+      containers:
+      - image: smrutimandal/mgmtimage
+        imagePullPolicy: Always
+        name: mgmt
+      restartPolicy: Always

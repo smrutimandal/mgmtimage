@@ -22,12 +22,12 @@ apt-get update && apt-get install -y \
   unzip \
   stress-ng
 
-curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o "awscliv2.zip"
+curl --silent "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 bash ./aws/install
 
 
-curl -o /usr/bin/calicoctl -O -L  https://github.com/projectcalico/calicoctl/releases/download/v3.4.0/calicoctl && chmod +x /usr/bin/calicoctl
+curl --silent -o /usr/bin/calicoctl -O -L  https://github.com/projectcalico/calicoctl/releases/download/v3.4.0/calicoctl && chmod +x /usr/bin/calicoctl
 
 apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

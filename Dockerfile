@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:stable-slim
 LABEL author="Smruti Mandal <smrutimandal@gmail.com>"
 
 ADD ["_rootfs", "/"]

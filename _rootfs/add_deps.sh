@@ -3,6 +3,7 @@ set -ex
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update && apt-get install -y \
+  jq \
   openssh-client \
   telnet \
   netcat-traditional \
